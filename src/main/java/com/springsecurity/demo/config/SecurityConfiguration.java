@@ -1,6 +1,5 @@
 package com.springsecurity.demo.config;
 
-import com.springsecurity.demo.user.SysUserDetailsService;
 import com.springsecurity.demo.user.User;
 import com.springsecurity.demo.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 /**
  * @Author: xiaoyu
@@ -49,20 +47,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         };
     }
 
-    /*@Override
-    @Bean
-    protected UserDetailsService userDetailsService() {
-        return new SysUserDetailsService();
-    }*/
-
-   /*@Bean
-    @Override
-    protected UserDetailsService userDetailsService(){
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(org.springframework.security.core.userdetails.User.withUsername("root").password("root").authorities("USER").build());
-        manager.createUser(org.springframework.security.core.userdetails.User.withUsername("admin").password("admin").authorities("USER").build());
-        return manager;
-    }*/
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

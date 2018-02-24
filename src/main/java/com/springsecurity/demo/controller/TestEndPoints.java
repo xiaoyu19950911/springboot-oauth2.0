@@ -19,8 +19,6 @@ public class TestEndPoints {
     @GetMapping("/product/{id}")
     public String getProduct(@PathVariable Integer id) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        //TokenEndpoint tokenEndpoint=new TokenEndpoint();
-        //tokenEndpoint.postAccessToken()
         return "product id:" + id;
     }
 
